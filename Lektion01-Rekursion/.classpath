@@ -7,5 +7,7 @@
 	<classpathentry kind="src" path="Fibonacci"/>
 	<classpathentry kind="src" path="FibTracer"/>
 	<classpathentry kind="src" path="LoopFib"/>
+	<classpathentry kind="src" path="Opgave1"/>
+	<classpathentry kind="src" path="Opgave2"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
