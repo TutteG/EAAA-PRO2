@@ -17,7 +17,7 @@ public class ScanDirectory {
 			String newPath = path + "/" + name;
 			if ((new File(newPath)).isDirectory()) {
 				System.out.println(counter);
-				return scanDir(newPath, counter + 1);
+				counter = scanDir(newPath, counter + 1);
 			}
 		}
 		return counter;
