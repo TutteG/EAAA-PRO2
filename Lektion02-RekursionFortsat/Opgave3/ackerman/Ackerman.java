@@ -1,7 +1,7 @@
 package ackerman;
 
 public class Ackerman {
-	public static int AckermanExpression(int x, int y) {
+	public static long AckermanExpression(long x, long y) {
 		if (x == 0) {
 			return y += 1;
 		} else if (y == 0) {
@@ -12,6 +12,6 @@ public class Ackerman {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(AckermanExpression(2, 7));
+		System.out.println(AckermanExpression(1, 3));
 	}
 }
