@@ -21,9 +21,38 @@ public class FletteSorteringMedTODO {
 
 	// kombiner er realiseret ved fletteskabelonen
 	private void merge(ArrayList<Integer> list, int low, int middle, int high) {
-		ArrayList<Integer> temp = new ArrayList<Integer>();
 		// TODO
-		merge(list, low, middle, high);
+		ArrayList<Integer> temp = new ArrayList<>();
+
+		ArrayList<Integer> array1 = new ArrayList<>(list.subList(low, middle + 1));
+
+		ArrayList<Integer> array2 = new ArrayList<>(list.subList(middle + 1, high + 1));
+
+		int i1 = 0;
+		int i2 = 0;
+
+		while (i1 < array1.size() && i2 < array2.size()) {
+			if (array1.get(i1).compareTo(array2.get(i2)) <= 0) {
+				temp.add(array1.get(i1));
+				i1++;
+			} else {
+				temp.add(array2.get(i2));
+				i2++;
+			}
+		}
+		while (i1 < array1.size()) {
+			temp.add(array1.get(i1));
+			i1++;
+		}
+
+		while (i2 < array2.size()) {
+			temp.add(array2.get(i2));
+			i2++;
+		}
+
+		for (int i = 0; i < temp.size(); i++) {
+			list.set(low + i, temp.get(i));
+		}
 	}
 
 }
