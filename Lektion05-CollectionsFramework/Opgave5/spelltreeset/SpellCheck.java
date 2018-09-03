@@ -8,8 +8,6 @@ import java.util.TreeMap;
 
 public class SpellCheck {
 	public static void main(String[] args) throws FileNotFoundException {
-		// Set<String> dictionaryWords = readWords("words");
-		// TreeSet<String> documentWords = readWords("Gjøngehøvdingen.txt");
 		TreeMap<String, Integer> words = readWords("Gjøngehøvdingen.txt");
 		Set<String> keySet = words.keySet();
 		for (String word : keySet) {
@@ -28,7 +26,7 @@ public class SpellCheck {
 				int something = words.get(niels);
 				words.put(niels, something + 1);
 			} else {
-				words.put(in.next(), 1);
+				words.put(niels, 1);
 			}
 		}
 		in.close();
