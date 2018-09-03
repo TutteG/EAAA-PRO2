@@ -4,5 +4,14 @@
 	<classpathentry kind="src" path="ListDemo"/>
 	<classpathentry kind="src" path="Set"/>
 	<classpathentry kind="src" path="HashMap"/>
+	<classpathentry kind="src" path="Opgave1"/>
+	<classpathentry kind="src" path="Opgave2"/>
+	<classpathentry kind="src" path="Opgave2.2"/>
+	<classpathentry kind="src" path="Opgave2.3"/>
+	<classpathentry kind="src" path="Opgave3"/>
+	<classpathentry kind="src" path="Opgave3.2.2"/>
+	<classpathentry kind="src" path="Opgave3.2.3"/>
+	<classpathentry kind="src" path="Opgave4"/>
+	<classpathentry kind="src" path="Opgave5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
