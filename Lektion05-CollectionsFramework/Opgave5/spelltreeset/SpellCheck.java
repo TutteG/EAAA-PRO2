@@ -21,12 +21,12 @@ public class SpellCheck {
 		// Use any characters other than a-z or A-Z as delimiters
 		in.useDelimiter("[^a-zA-Z]+");
 		while (in.hasNext()) {
-			String niels = in.next();
-			if (words.containsKey(niels)) {
-				int something = words.get(niels);
-				words.put(niels, something + 1);
+			String nextIn = in.next();
+			if (words.containsKey(nextIn)) {
+				int something = words.get(nextIn);
+				words.put(nextIn, something + 1);
 			} else {
-				words.put(niels, 1);
+				words.put(nextIn, 1);
 			}
 		}
 		in.close();
