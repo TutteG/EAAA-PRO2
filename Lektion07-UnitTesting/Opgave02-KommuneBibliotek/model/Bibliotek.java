@@ -21,7 +21,6 @@ public class Bibliotek {
 		} else {
 			int daysBetween = (int) ChronoUnit.DAYS.between(beregnetDato, faktiskDato);
 			if (voksen) {
-
 				if (daysBetween > 14) {
 					bøde = 90;
 				} else if (daysBetween >= 7) {

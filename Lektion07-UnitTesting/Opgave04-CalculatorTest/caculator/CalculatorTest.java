@@ -57,6 +57,9 @@ public class CalculatorTest {
 		calculator.add(100);
 		calculator.squareRoot();
 		assertEquals(10, calculator.getResult());
+		calculator.add(15);
+		calculator.squareRoot();
+		assertEquals(5, calculator.getResult());
 
 	}
 
