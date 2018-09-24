@@ -38,6 +38,6 @@ public class Customer implements Comparable<Customer> {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return name;
+		return "[" + name + " Number: " + number + "]";
 	}
 }

@@ -6,6 +6,6 @@ public class CompareNumber implements Comparator<Customer> {
 	@Override
 	public int compare(Customer o1, Customer o2) {
 		// TODO Auto-generated method stub
-		return Integer.compare(o1.getNumber(), o2.getNumber());
+		return o1.getNumber() - o2.getNumber();
 	}
 }

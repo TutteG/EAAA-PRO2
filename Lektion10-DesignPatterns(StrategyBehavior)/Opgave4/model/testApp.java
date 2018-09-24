@@ -27,11 +27,16 @@ public class testApp {
 		customers.add(customer6);
 		customers.add(customer7);
 		customers.add(customer8);
+		System.out.println("Mega usorteret liste:");
 		System.out.println(customers);
 
+		System.out.println();
+		System.out.println("Collections.sort med compName");
 		Collections.sort(customers);
 		System.out.println(customers);
 
+		System.out.println();
+		System.out.println("Collections.sort med compNumber");
 		customer1.setComp(compNumber);
 		customer2.setComp(compNumber);
 		customer3.setComp(compNumber);
@@ -44,8 +49,12 @@ public class testApp {
 		Collections.sort(customers);
 		System.out.println(customers);
 
+		System.out.println();
+		System.out.println("kald af sort direkte på listen med compName");
 		customers.sort(compName);
 		System.out.println(customers);
+		System.out.println();
+		System.out.println("kald af sort direkte på listen med compNumber");
 		customers.sort(compNumber);
 		System.out.println(customers);
 	}
