@@ -1,10 +1,8 @@
 package opgave2;
 
-import src.SortedLinkedList;
-
 public class main {
 	public static void main(String[] args) {
-		SortedLinkedList list = new SortedLinkedList();
+		SortedDoublyLinkedList list = new SortedDoublyLinkedList();
 		list.addElement("D");
 		list.addElement("Å");
 		list.addElement("Q");
