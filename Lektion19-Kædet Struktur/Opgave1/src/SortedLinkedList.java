@@ -8,12 +8,11 @@ public class SortedLinkedList {
 		first = null;
 	}
 
-	public void addElementJa(String element) {
+	public void addElement(String element) {
 		if (first == null) {
 			Node node = new Node();
 			node.data = element;
 			first = node;
-			System.out.println(element + " indsat init");
 
 		} else if (first.data.compareTo(element) > 0) {
 			Node node = new Node();
@@ -22,7 +21,6 @@ public class SortedLinkedList {
 			temp = first;
 			first = node;
 			first.next = temp;
-			System.out.println(element + " indsat før");
 
 		} else {
 			boolean found = false;
@@ -37,60 +35,10 @@ public class SortedLinkedList {
 				}
 			}
 			if (found) {
-				System.out.println(temp.data);
 				Node newNode = new Node();
 				newNode.data = element;
 				newNode.next = temp2;
 				temp.next = newNode;
-				System.out.println(element + " indsat efter");
-			}
-		}
-	}
-
-	public void addElement(String element) {
-		if (first == null) {
-			first = new Node();
-			first.data = element;
-			first.next = null;
-		} else if (first != null) {
-			Node temp = first;
-			Node temp3 = null;
-			boolean found = false;
-			while (!found) {
-				if (temp != null && temp.data.compareTo(element) > 0) {
-					found = true;
-				} else if (temp.next == null) {
-					found = true;
-				} else {
-					temp3 = temp;
-					temp = temp.next;
-				}
-			}
-			if (found) {
-				if (temp.next == null && temp.data.compareTo(element) > 0) {
-					if (temp.data.compareTo(element) > 0) {
-						Node temp2 = new Node();
-						temp2.data = element;
-						temp.next = temp2;
-						temp2.next = null;
-					} else if (temp.data.compareTo(element) < 0) {
-						Node temp2 = new Node();
-						temp2.data = element;
-						temp3.next = temp2;
-						temp2.next = temp;
-
-					}
-				} else if (temp.data.compareTo(element) > 0) {
-					Node temp2 = new Node();
-					temp2.data = element;
-					temp2.next = temp.next;
-					temp.next = temp2;
-				} else {
-					Node temp2 = new Node();
-					temp2.next = temp.next;
-					temp.next = temp2;
-					temp2.data = element;
-				}
 			}
 		}
 	}
