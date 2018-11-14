@@ -4,9 +4,7 @@ public class AnvendCounter {
 	public static void main(String[] args) {
 
 		Counter counter = Counter.getCounter();
-		Counter counter2 = counter.getCounter();
-		counter2.count();
-		// y would i do this???
+		Counter counter2 = Counter.getCounter();
 
 		System.out.println(Counter.getCounter().getValue());
 		Counter.getCounter().count();
@@ -15,5 +13,9 @@ public class AnvendCounter {
 		System.out.println(Counter.getCounter().getValue());
 		Counter.getCounter().zero();
 		System.out.println(Counter.getCounter().getValue());
+
+		// why would i do this??? // Too remove warnings..
+		counter.count();
+		counter2.count();
 	}
 }

@@ -1,6 +1,6 @@
-package opgave3;
+package opgave4;
 
-public class main {
+public class mainApp {
 	public static void main(String[] args) {
 		SortedLinkedList list = new SortedLinkedList();
 		list.addElement("D");
@@ -30,10 +30,10 @@ public class main {
 		list2.addElement("Rasmus");
 		list2.addElement("Peter");
 		list2.addElement("Michael");
-		System.out.println(list2.toString() + " Elementer: " + list2.countElement());
+		System.out.println(list2.toString() + " Elementer: " + list2.countElementsRecursiveHelper());
 
 		list2.addAll(list);
-		System.out.println(list2.toString() + " Elementer: " + list2.countElement());
+		System.out.println(list2.toString() + " Elementer: " + list2.countElementsRecursiveHelper());
 
 	}
 }

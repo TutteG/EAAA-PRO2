@@ -1,6 +1,6 @@
 package opgave2;
 
-public class main {
+public class mainApp {
 	public static void main(String[] args) {
 		SortedDoublyLinkedList list = new SortedDoublyLinkedList();
 		list.addElement("D");
