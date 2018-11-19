@@ -11,7 +11,6 @@ public class Person<T extends Comparable<T>> implements Comparable<Person<T>> {
 		return navn;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public int compareTo(Person<T> o) {
 		// TODO Auto-generated method stub
