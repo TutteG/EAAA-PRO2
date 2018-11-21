@@ -24,16 +24,22 @@ public class mainApp {
 			case ')':
 				if (stack.peek().equals('(')) {
 					stack.pop();
+				} else {
+					return false;
 				}
 				break;
 			case ']':
 				if (stack.peek().equals('[')) {
 					stack.pop();
+				} else {
+					return false;
 				}
 				break;
 			case '}':
 				if (stack.peek().equals('{')) {
 					stack.pop();
+				} else {
+					return false;
 				}
 				break;
 			default:

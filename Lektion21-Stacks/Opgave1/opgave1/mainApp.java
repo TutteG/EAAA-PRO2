@@ -15,6 +15,7 @@ public class mainApp {
 		stack.pop();
 		System.out.println(stack.isEmpty());
 		System.out.println("Size: " + stack.size());
+		System.out.println(stack.pop());
 
 	}
 }
