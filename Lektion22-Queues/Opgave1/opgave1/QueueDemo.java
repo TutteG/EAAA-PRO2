@@ -4,7 +4,7 @@ import queues.Queue;
 
 public class QueueDemo {
 	public static void main(String[] args) {
-		Queue q = new ArrayQueue();
+		Queue<String> q = new ArrayQueue<String>();
 		System.out.println(q.isEmpty() + " " + q.size());
 
 		q.enqueue("Arnold");
@@ -25,7 +25,7 @@ public class QueueDemo {
 
 		System.out.println("Linkedlist\n");
 
-		Queue ll = new LinkedListQueue();
+		Queue<String> ll = new LinkedListQueue<String>();
 		System.out.println(ll.isEmpty() + " " + ll.size());
 		ll.enqueue("Arne");
 		ll.enqueue("Kennet");
@@ -33,6 +33,7 @@ public class QueueDemo {
 		ll.enqueue("Peter");
 		ll.enqueue("Jonas");
 		ll.enqueue("Torben");
+
 		System.out.println(ll.getFront());
 		System.out.println(ll.isEmpty() + " " + ll.size());
 

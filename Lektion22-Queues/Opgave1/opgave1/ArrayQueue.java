@@ -5,16 +5,17 @@ import queues.Queue;
 /**
  * An implementation of a queue using an array
  */
-public class ArrayQueue<T> implements Queue {
+@SuppressWarnings("unchecked")
+public class ArrayQueue<T> implements Queue<T> {
 
-	Object[] array;
+	T[] array;
 	int index = 0;
 
 	/**
 	 * Constructs an empty queue.
 	 */
 	public ArrayQueue() {
-		array = new Object[10];
+		array = (T[]) new Object[10];
 	}
 
 	/**
@@ -34,11 +35,11 @@ public class ArrayQueue<T> implements Queue {
 	 * @param newElement the element to add
 	 */
 	@Override
-	public void enqueue(Object newElement) {
+	public void enqueue(T newElement) {
 		// TODO
 		if (size() == array.length) {
-			Object[] temp = array;
-			array = new Object[temp.length * 2];
+			T[] temp = array;
+			array = (T[]) new Object[temp.length * 2];
 			for (int i = 0; i < temp.length; i++) {
 				array[i] = temp[i];
 			}
@@ -53,9 +54,9 @@ public class ArrayQueue<T> implements Queue {
 	 * @return the removed element
 	 */
 	@Override
-	public Object dequeue() {
+	public T dequeue() {
 		if (!isEmpty()) {
-			Object temp = array[0];
+			T temp = array[0];
 			index--;
 			boolean done = false;
 			for (int i = 0; i < array.length - 1 && done != true; i++) {
@@ -77,7 +78,7 @@ public class ArrayQueue<T> implements Queue {
 	 * @return the head element
 	 */
 	@Override
-	public Object getFront() {
+	public T getFront() {
 		// TODO
 		if (!isEmpty()) {
 			return array[0];

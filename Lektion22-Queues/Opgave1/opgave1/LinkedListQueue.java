@@ -1,11 +1,9 @@
 package opgave1;
 
-import java.util.LinkedList;
-
 import queues.Queue;
 
-public class LinkedListQueue implements Queue {
-	LinkedList<Object> list = new LinkedList<Object>();
+public class LinkedListQueue<T extends Comparable<T>> implements Queue<T> {
+	LinkedList<T> list = new LinkedList<T>();
 
 	@Override
 	public boolean isEmpty() {
@@ -13,20 +11,22 @@ public class LinkedListQueue implements Queue {
 	}
 
 	@Override
-	public void enqueue(Object newElement) {
-		list.add(newElement);
+	public void enqueue(T newElement) {
+		list.addElement(newElement);
 	}
 
 	@Override
-	public Object dequeue() {
-		Object obj = list.get(0);
-		list.remove(0);
+	public T dequeue() {
+		T obj = getFront();
+		if (obj != null) {
+			list.removeElement(obj);
+		}
 		return obj;
 	}
 
 	@Override
-	public Object getFront() {
-		return list.get(0);
+	public T getFront() {
+		return list.getFirst();
 	}
 
 	@Override
