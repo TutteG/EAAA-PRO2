@@ -6,10 +6,10 @@ import java.util.NoSuchElementException;
 import queues.Queue;
 import queues.Rand;
 
-public class CircularList implements Queue {
-	private LinkedList<Object> list = new LinkedList<Object>();
-	int head = 0;
-	int tail = 0;
+public class CircularList<T> implements Queue<T> {
+	private LinkedList<T> list = new LinkedList<T>();
+	private int head = 0;
+	private int tail = 0;
 
 	@Override
 	public boolean isEmpty() {
@@ -17,13 +17,13 @@ public class CircularList implements Queue {
 	}
 
 	@Override
-	public void enqueue(Object newElement) {
+	public void enqueue(T newElement) {
 		list.add(newElement);
 		tail++;
 	}
 
 	@Override
-	public Object dequeue() {
+	public T dequeue() {
 		try {
 			tail--;
 			return list.removeFirst();
@@ -32,11 +32,30 @@ public class CircularList implements Queue {
 		}
 	}
 
-	public Object pickRandom(int count) {
+	public T pickRandom(int count) {
 		Rand rand = new Rand(tail, 0);
 		head = rand.randomInRange();
 		try {
-			Object obj = null;
+			T obj = null;
+			for (int i = 0; i < count; i++) {
+				if (head == tail) {
+					head = 0;
+				}
+				obj = list.get(head);
+				head++;
+			}
+			tail--;
+			list.remove(obj);
+			return obj;
+		} catch (NoSuchElementException e) {
+			return null;
+		}
+	}
+
+	public T pickRandom(int head, int count) {
+		try {
+			head = head - 1;
+			T obj = null;
 			for (int i = 0; i < count; i++) {
 				if (head == tail) {
 					head = 0;
@@ -53,7 +72,7 @@ public class CircularList implements Queue {
 	}
 
 	@Override
-	public Object getFront() {
+	public T getFront() {
 		return list.getFirst();
 	}
 
@@ -64,7 +83,6 @@ public class CircularList implements Queue {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return list.toString();
 	}
 }

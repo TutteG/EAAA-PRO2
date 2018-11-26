@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 /**
  * An implementation of a queue as a circular array.
  */
-public class CircularArrayQueue implements Queue {
+public class CircularArrayQueue implements Queue<Object> {
 	private Object[] elements;
 	private int currentSize;
 	private int head;
@@ -35,8 +35,7 @@ public class CircularArrayQueue implements Queue {
 	/**
 	 * Adds an element to the tail of this queue.
 	 *
-	 * @param newElement
-	 *            the element to add
+	 * @param newElement the element to add
 	 */
 	@Override
 	public void enqueue(Object newElement) {

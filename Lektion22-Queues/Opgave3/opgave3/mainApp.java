@@ -2,7 +2,7 @@ package opgave3;
 
 public class mainApp {
 	public static void main(String[] args) {
-		CircularList cl = new CircularList();
+		CircularList<Person> cl = new CircularList<Person>();
 		cl.enqueue(new Person("Jens"));
 		cl.enqueue(new Person("Kennet"));
 		cl.enqueue(new Person("Rasmus"));
@@ -19,5 +19,6 @@ public class mainApp {
 
 		System.out.println(cl.pickRandom(7));
 		System.out.println(cl);
+		System.out.println(cl.pickRandom(2, 7));
 	}
 }

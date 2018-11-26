@@ -6,11 +6,6 @@ public class StackQueue<T> implements Queue<T> {
 	Arraystack<T> stack = new Arraystack<T>();
 
 	@Override
-	public boolean isEmpty() {
-		return stack.isEmpty();
-	}
-
-	@Override
 	public void enqueue(T newElement) {
 		if (isEmpty()) {
 			stack.push(newElement);
@@ -28,6 +23,11 @@ public class StackQueue<T> implements Queue<T> {
 				stack.push(element);
 			}
 		}
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return stack.isEmpty();
 	}
 
 	@Override
