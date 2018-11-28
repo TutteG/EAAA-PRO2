@@ -34,7 +34,9 @@ public class HashSetLinearProbing {
 			if (h == buckets.length) {
 				h = 0;
 			}
-			if (buckets[h] != null && buckets[h].equals(x)) {
+			if (buckets[h] == null) {
+				return false;
+			} else if (buckets[h] != null && buckets[h].equals(x)) {
 				return true;
 			}
 			h++;
@@ -49,18 +51,17 @@ public class HashSetLinearProbing {
 	 * @return true if x is a new object, false if x was already in the set
 	 */
 	public boolean add(Object x) {
-		// TODO
 		int h = hashValue(x);
 		for (int i = 0; i < buckets.length; i++) {
 			if (h == buckets.length) {
 				h = 0;
 			}
-			if (buckets[h] == null) {
+			if (buckets[h] != null && buckets[h].equals(x)) {
+				return false;
+			} else if (buckets[h] == null || buckets[h] == State.DELETED) {
 				buckets[h] = x;
 				currentSize++;
 				return true;
-			} else if (buckets[h].equals(x)) {
-				return false;
 			}
 			h++;
 		}
@@ -81,8 +82,10 @@ public class HashSetLinearProbing {
 			if (h == buckets.length) {
 				h = 0;
 			}
-			if (buckets[h] != null && buckets[h].equals(x)) {
-				buckets[h] = null;
+			if (buckets[h] == null) {
+				return false;
+			} else if (buckets[h] != null && buckets[h].equals(x)) {
+				buckets[h] = State.DELETED;
 				currentSize--;
 				return true;
 			}

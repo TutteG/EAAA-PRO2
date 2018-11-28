@@ -1,0 +1,5 @@
+package opgave1;
+
+public enum Colour {
+	WHITE, BLACK, RED, BLUE, GREEN, YELLOW, ORANGE, PURPLE, BURGUNDY, PINK, VIOLET, MAGENTA, SILVER
+}
