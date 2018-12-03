@@ -23,8 +23,7 @@ public class DictionaryHashMap<K, V> implements Dictionary<K, V> {
 	@Override
 	public V get(K key) {
 		int i = key.hashCode() % N;
-		Map<K, V> map = tabel[i];
-		return map.get(key);
+		return tabel[i].get(key);
 	}
 
 	@Override

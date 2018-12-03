@@ -9,7 +9,7 @@ public class HashSetDemo {
 	}
 
 	public static void testHashSetChaining() {
-		HashSetChaining names = new HashSetChaining(13);
+		HashSetChaining<String> names = new HashSetChaining<String>(13);
 
 		names.add("Harry");
 		names.add("Sue");
