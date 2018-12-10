@@ -146,8 +146,8 @@ public class BinaryTree<E> {
 	private void preOrder(Node n) {
 		if (n != null) {
 			System.out.println(n.data);
-			inOrder(n.left);
-			inOrder(n.right);
+			preOrder(n.left);
+			preOrder(n.right);
 		}
 	}
 
@@ -157,8 +157,8 @@ public class BinaryTree<E> {
 
 	private void postOrder(Node n) {
 		if (n != null) {
-			inOrder(n.left);
-			inOrder(n.right);
+			postOrder(n.left);
+			postOrder(n.right);
 			System.out.println(n.data);
 		}
 	}
@@ -173,7 +173,6 @@ public class BinaryTree<E> {
 		} else {
 			return 0;
 		}
-
 	}
 
 	public double avg() {

@@ -13,8 +13,11 @@ public class DecisionTreeDemo {
 		BinaryTree<Integer> root = new BinaryTree<Integer>(45, mid1, mid2);
 		System.out.println(root.height());
 
+		System.out.println("\ninOrder");
 		root.inOrder();
+		System.out.println("\npreOrder");
 		root.preOrder();
+		System.out.println("\npostOrder");
 		root.postOrder();
 	}
 }

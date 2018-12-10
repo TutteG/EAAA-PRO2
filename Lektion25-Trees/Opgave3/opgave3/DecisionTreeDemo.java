@@ -13,13 +13,16 @@ public class DecisionTreeDemo {
 		BinaryTree<Integer> root = new BinaryTree<Integer>(45, mid1, mid2);
 		System.out.println(root.height());
 		System.out.println(root.size());
+		System.out.println("\ninOrder");
 		root.inOrder();
+		System.out.println("\npreOrder");
 		root.preOrder();
+		System.out.println("\npostOrder");
 		root.postOrder();
 
 		System.out.println();
 		System.out.println();
-		System.out.println(root.sum());
-		System.out.println(root.avg());
+		System.out.println("Sum: " + root.sum());
+		System.out.println("Gennemsnit: " + root.avg());
 	}
 }
