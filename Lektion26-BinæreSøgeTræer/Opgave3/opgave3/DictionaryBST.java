@@ -145,7 +145,6 @@ public class DictionaryBST<K extends Comparable<K>, V> implements Dictionary<K, 
 
 	private int size(Node node) {
 		if (node == null) {
-
 			return 0;
 		} else {
 			return 1 + size(node.left) + size(node.right);
