@@ -14,8 +14,8 @@ public class DoorOpen extends DoorState {
 
 	@Override
 	public void click() {
+		door.stopTimer();
 		door.setState(door.getStayOpenState());
-		door.startTimer(100, event -> door.getState());
 	}
 
 	@Override

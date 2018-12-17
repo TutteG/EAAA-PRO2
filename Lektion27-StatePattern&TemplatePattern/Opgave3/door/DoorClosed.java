@@ -15,9 +15,6 @@ public class DoorClosed extends DoorState {
 	@Override
 	public void click() {
 		door.setState(door.getOpeningState());
-		door.startTimer(3000, event -> {
-			door.getState().complete();
-			// TODO: ??
-		});
+		door.startTimer(3000, event -> door.getState().complete());
 	}
 }
