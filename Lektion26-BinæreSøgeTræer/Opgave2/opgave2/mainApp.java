@@ -1,5 +1,7 @@
 package opgave2;
 
+import java.util.NoSuchElementException;
+
 public class mainApp {
 	public static void main(String[] args) {
 		BinarySearchTree<Integer> tree = new BinarySearchTree<>();
@@ -36,7 +38,15 @@ public class mainApp {
 		System.out.println(tree.removeMin());
 		tree.print();
 		System.out.println(tree.removeMin());
-		System.out.println(tree.removeMin());
+		try {
+			System.out.println(tree.removeMin());
 
+		} catch (NoSuchElementException e) {
+			// TODO: handle exception
+			System.out.println("Ikke flere elementer");
+			tree.print();
+			System.out.println(tree.findMax());
+
+		}
 	}
 }

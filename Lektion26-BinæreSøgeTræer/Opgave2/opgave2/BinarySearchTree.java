@@ -1,5 +1,7 @@
 package opgave2;
 
+import java.util.NoSuchElementException;
+
 /**
  * This class implements a binary search tree whose nodes hold objects that
  * implement the Comparable interface.
@@ -149,7 +151,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
 			}
 			return returnable.data;
 		}
-		return null;
+		throw new NoSuchElementException();
 	}
 
 	/**
